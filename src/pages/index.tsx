@@ -147,15 +147,15 @@ export default function HomePage() {
                 <main id="top">
                     <section className="relative overflow-hidden bg-white">
                         <div className="absolute inset-x-0 -top-24 h-64 bg-gradient-to-b from-slate-50 to-transparent" aria-hidden />
-                        <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-20 pt-16 md:flex-row md:items-center md:pt-20">
-                            <div className="w-full md:w-3/5">
+                        <div className="mx-auto flex min-h-[70vh] max-w-5xl flex-col items-center justify-center gap-8 px-6 pb-20 pt-16 text-center md:pt-20">
+                            <div className="w-full space-y-6">
                                 <h1 className="text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl">
-                                    We Book HOA Meetings For You — So You Can Stay In The Field And Grow Your Business
+                                    We Book HOA Meetings For You — So You Can Focus On Growing Your Business
                                 </h1>
-                                <p className="mt-6 max-w-2xl text-lg text-slate-600">
+                                <p className="mx-auto max-w-2xl text-lg text-slate-600">
                                     Stop wasting time chasing HOAs. Stop guessing who the decision maker is. Stop hoping referrals show up. We deliver qualified, appointment-ready HOA meetings straight to your calendar.
                                 </p>
-                                <div className="mt-6 flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-700">
+                                <div className="flex flex-wrap items-center justify-center gap-3 text-sm font-semibold text-slate-700">
                                     {trustPoints.map((item) => (
                                         <span key={item} className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2">
                                             <span className={`inline-block h-2.5 w-2.5 rounded-full ${accentBg}`} />
@@ -163,7 +163,7 @@ export default function HomePage() {
                                         </span>
                                     ))}
                                 </div>
-                                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                                <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
                                     <a
                                         href="#contact"
                                         className={`inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-lg ${accentBg}`}
@@ -180,51 +180,9 @@ export default function HomePage() {
                                         </svg>
                                     </a>
                                 </div>
-                                <p className="mt-4 text-sm text-slate-500">
+                                <p className="text-sm text-slate-500">
                                     Built for contractors who want predictable HOA contracts without doing outbound.
                                 </p>
-                            </div>
-                            <div className="relative w-full md:w-2/5">
-                                <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex items-center gap-3">
-                                            <div className={`flex h-12 w-12 items-center justify-center rounded-full bg-[#E8F3F1] text-2xl font-semibold ${accent}`}>
-                                                PO
-                                            </div>
-                                            <div>
-                                                <p className="text-sm font-semibold text-slate-700">Your outreach control room</p>
-                                                <p className="text-xs text-slate-500">Signal, scheduling, and status in one view</p>
-                                            </div>
-                                        </div>
-                                        <span className={`rounded-full px-3 py-1 text-xs font-semibold text-white ${accentBg}`}>Live</span>
-                                    </div>
-                                    <div className="mt-6 grid gap-4 rounded-xl bg-white p-4 text-sm text-slate-700 shadow-inner">
-                                        {['Target market loaded', 'Decision makers verified', 'Outreach running', 'Meetings booked'].map((item, index) => (
-                                            <div key={item} className="flex items-center gap-3">
-                                                <span className={`inline-flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold text-white ${accentBg}`}>
-                                                    {index + 1}
-                                                </span>
-                                                <span className="flex-1">{item}</span>
-                                                <span className="text-xs text-slate-500">Updated</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <div className="mt-6 rounded-xl border border-slate-200 bg-white p-4">
-                                        <p className="text-xs uppercase tracking-wide text-slate-500">This week</p>
-                                        <div className="mt-3 flex items-center justify-between">
-                                            <div>
-                                                <p className="text-3xl font-semibold text-slate-900">8</p>
-                                                <p className="text-sm text-slate-600">Booked HOA meetings</p>
-                                            </div>
-                                            <div className="rounded-lg bg-slate-100 px-4 py-3 text-right">
-                                                <p className={`text-sm font-semibold ${accent}`}>+3 vs last week</p>
-                                                <p className="text-xs text-slate-600">Pipeline staying full</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#E8F3F1] blur-3xl" aria-hidden />
-                                    <div className="absolute -bottom-14 -left-6 h-32 w-32 rounded-full bg-[#E0ECFF] blur-3xl" aria-hidden />
-                                </div>
                             </div>
                         </div>
                     </section>
