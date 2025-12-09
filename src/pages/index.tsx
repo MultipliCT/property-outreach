@@ -320,9 +320,6 @@ export default function HomePage() {
                                             </div>
                                         ))}
                                     </div>
-                                    <p className="mt-6 text-sm text-slate-600">
-                                        Built with a single accent color, no fluff, and a focus on professional conversations.
-                                    </p>
                                 </div>
                             </div>
                         </div>
