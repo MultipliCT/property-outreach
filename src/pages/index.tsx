@@ -6,21 +6,114 @@ const accent = 'text-[#1F7A8C]';
 const accentBg = 'bg-[#1F7A8C]';
 
 const navLinks = [
-    { label: 'How it works', href: '#how-it-works' },
-    { label: 'For HOAs', href: '#for-hoas' },
-    { label: 'For Service Vendors', href: '#for-vendors' },
-    { label: 'About', href: '#about' },
+    { label: 'How It Works', href: '#how-it-works' },
+    { label: 'Why Vendors Struggle', href: '#why-struggle' },
+    { label: 'What You Get', href: '#what-you-get' },
+    { label: 'Pricing', href: '#pricing' },
+    { label: 'Testimonials', href: '#testimonials' },
     { label: 'Contact', href: '#contact' }
+];
+
+const trustPoints = ['No cold calling', 'No door knocking', 'No hiring in-house sales'];
+
+const whatYouGet = [
+    'Qualified meetings with HOA and property-management decision makers',
+    'A predictable flow of contract opportunities',
+    'Zero time spent on outreach, calling, or follow-ups',
+    'No more quoting for people who can’t sign anything',
+    'Contracts that renew yearly and bring stability',
+    'A proven sales process done entirely for you'
+];
+
+const struggleReasons = [
+    'They’re too busy in the field to prospect',
+    'They don’t know who to call inside the HOA',
+    'They hate doing outbound',
+    'They rely on slow, inconsistent referrals',
+    'They waste hours quoting non-decision makers',
+    'They have no follow-up system'
+];
+
+const howItWorks = [
+    {
+        title: 'Tell us your service area and ideal job size',
+        text: 'We learn exactly what kind of HOAs you want to work with.',
+        icon: (
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 7h18M3 12h12m-7 5h13" />
+            </svg>
+        )
+    },
+    {
+        title: 'We build your HOA decision-maker list',
+        text: 'Verified contacts. Real decision makers. No guessing.',
+        icon: (
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-6-6h12" />
+            </svg>
+        )
+    },
+    {
+        title: 'We run outbound for you',
+        text: 'Calling, emailing, follow-ups — all handled by us.',
+        icon: (
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 4l8 8 4-4 4 4" />
+            </svg>
+        )
+    },
+    {
+        title: 'You receive booked HOA meetings',
+        text: 'Qualified, pre-framed appointments with people who can sign contracts.',
+        icon: (
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M7 10l5 5 5-5" />
+            </svg>
+        )
+    },
+    {
+        title: 'You close and grow',
+        text: 'You focus on the work — we keep your pipeline full.',
+        icon: (
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
+            </svg>
+        )
+    }
+];
+
+const reasonsToChoose = [
+    'You never have to cold call again',
+    'You get in front of real decision makers, not random homeowners',
+    'We speak the language of HOAs and property managers',
+    'Month-to-month commitment (we earn your business every month)',
+    'You get a dedicated outreach system without hiring staff'
+];
+
+const testimonials = [
+    {
+        quote:
+            'Property Outreach booked us 3 HOA meetings in the first two weeks. We closed one for a full-year landscaping contract.',
+        name: 'Chris M., Landscaping (Florida)'
+    },
+    {
+        quote: 'We used to spend hours calling HOAs ourselves. Now we just show up to meetings.',
+        name: 'Daniel S., Pressure Washing (Texas)'
+    },
+    {
+        quote: 'They got us in front of a decision maker we tried reaching for months.',
+        name: 'Amanda R., Pool Services (Arizona)'
+    }
 ];
 
 export default function HomePage() {
     return (
         <>
             <Head>
-                <title>Property Outreach | Connecting HOAs with reliable service vendors</title>
+                <title>Property Outreach | We Book HOA Meetings For Service Vendors</title>
                 <meta
                     name="description"
-                    content="Property Outreach coordinates outreach between HOAs, property managers, and vetted service vendors for focused, well-timed meetings."
+                    content="Property Outreach books qualified HOA meetings for service vendors so they can stay in the field and grow."
                 />
             </Head>
             <div style={{ scrollBehavior: 'smooth' }} className="bg-white text-slate-900">
@@ -40,7 +133,7 @@ export default function HomePage() {
                             href="#contact"
                             className={`hidden rounded-full px-4 py-2 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-md md:inline-flex ${accentBg}`}
                         >
-                            Book an Intro Call
+                            Get HOA Meetings
                         </a>
                         <button className="inline-flex items-center justify-center rounded-md border border-slate-200 p-2 md:hidden">
                             <span className="sr-only">Menu</span>
@@ -56,23 +149,26 @@ export default function HomePage() {
                         <div className="absolute inset-x-0 -top-24 h-64 bg-gradient-to-b from-slate-50 to-transparent" aria-hidden />
                         <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-20 pt-16 md:flex-row md:items-center md:pt-20">
                             <div className="w-full md:w-3/5">
-                                <p className={`mb-4 inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide ${accent}`}>
-                                    HOA focused
-                                    <span className="inline-block h-2 w-2 rounded-full bg-[#1F7A8C]" />
-                                </p>
                                 <h1 className="text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl">
-                                    Connecting HOAs with reliable service vendors.
+                                    We Book HOA Meetings For You — So You Can Stay In The Field And Grow Your Business
                                 </h1>
                                 <p className="mt-6 max-w-2xl text-lg text-slate-600">
-                                    Property Outreach coordinates outreach between property decision-makers and vetted service vendors. We help HOAs and property
-                                    managers easily discover options when reviewing service contracts – starting with landscaping and snow removal.
+                                    Stop wasting time chasing HOAs. Stop guessing who the decision maker is. Stop hoping referrals show up. We deliver qualified, appointment-ready HOA meetings straight to your calendar.
                                 </p>
+                                <div className="mt-6 flex flex-wrap items-center gap-3 text-sm font-semibold text-slate-700">
+                                    {trustPoints.map((item) => (
+                                        <span key={item} className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-4 py-2">
+                                            <span className={`inline-block h-2.5 w-2.5 rounded-full ${accentBg}`} />
+                                            {item}
+                                        </span>
+                                    ))}
+                                </div>
                                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                                     <a
                                         href="#contact"
                                         className={`inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-lg ${accentBg}`}
                                     >
-                                        Book an Intro Call
+                                        Get HOA Meetings
                                     </a>
                                     <a
                                         href="#how-it-works"
@@ -84,36 +180,46 @@ export default function HomePage() {
                                         </svg>
                                     </a>
                                 </div>
+                                <p className="mt-4 text-sm text-slate-500">
+                                    Built for contractors who want predictable HOA contracts without doing outbound.
+                                </p>
                             </div>
                             <div className="relative w-full md:w-2/5">
                                 <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
-                                    <div className="mb-6 flex items-center gap-3">
-                                        <div className={`flex h-12 w-12 items-center justify-center rounded-full bg-[#E8F3F1] text-2xl ${accent}`}>
-                                            PO
+                                    <div className="flex items-center justify-between">
+                                        <div className="flex items-center gap-3">
+                                            <div className={`flex h-12 w-12 items-center justify-center rounded-full bg-[#E8F3F1] text-2xl font-semibold ${accent}`}>
+                                                PO
+                                            </div>
+                                            <div>
+                                                <p className="text-sm font-semibold text-slate-700">Your outreach control room</p>
+                                                <p className="text-xs text-slate-500">Signal, scheduling, and status in one view</p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <p className="text-sm font-semibold text-slate-700">Focused coordination</p>
-                                            <p className="text-xs text-slate-500">Built for HOAs and local vendors</p>
-                                        </div>
+                                        <span className={`rounded-full px-3 py-1 text-xs font-semibold text-white ${accentBg}`}>Live</span>
                                     </div>
-                                    <div className="space-y-4 text-sm text-slate-700">
-                                        <div className="flex items-start gap-3">
-                                            <span className={`mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold text-white ${accentBg}`}>
-                                                1
-                                            </span>
-                                            <p>Reach communities when they are reviewing contracts.</p>
-                                        </div>
-                                        <div className="flex items-start gap-3">
-                                            <span className={`mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold text-white ${accentBg}`}>
-                                                2
-                                            </span>
-                                            <p>Match them with a vetted local vendor for one focused meeting.</p>
-                                        </div>
-                                        <div className="flex items-start gap-3">
-                                            <span className={`mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold text-white ${accentBg}`}>
-                                                3
-                                            </span>
-                                            <p>Keep the process respectful—no spam, no pressure.</p>
+                                    <div className="mt-6 grid gap-4 rounded-xl bg-white p-4 text-sm text-slate-700 shadow-inner">
+                                        {['Target market loaded', 'Decision makers verified', 'Outreach running', 'Meetings booked'].map((item, index) => (
+                                            <div key={item} className="flex items-center gap-3">
+                                                <span className={`inline-flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold text-white ${accentBg}`}>
+                                                    {index + 1}
+                                                </span>
+                                                <span className="flex-1">{item}</span>
+                                                <span className="text-xs text-slate-500">Updated</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div className="mt-6 rounded-xl border border-slate-200 bg-white p-4">
+                                        <p className="text-xs uppercase tracking-wide text-slate-500">This week</p>
+                                        <div className="mt-3 flex items-center justify-between">
+                                            <div>
+                                                <p className="text-3xl font-semibold text-slate-900">8</p>
+                                                <p className="text-sm text-slate-600">Booked HOA meetings</p>
+                                            </div>
+                                            <div className="rounded-lg bg-slate-100 px-4 py-3 text-right">
+                                                <p className={`text-sm font-semibold ${accent}`}>+3 vs last week</p>
+                                                <p className="text-xs text-slate-600">Pipeline staying full</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#E8F3F1] blur-3xl" aria-hidden />
@@ -123,225 +229,224 @@ export default function HomePage() {
                         </div>
                     </section>
 
+                    <section id="what-you-get" className="border-t border-slate-200 bg-slate-50 py-16">
+                        <div className="mx-auto max-w-6xl px-6">
+                            <h2 className="text-3xl font-semibold text-slate-900">Grow your business without doing any outbound</h2>
+                            <div className="mt-6 grid gap-6 md:grid-cols-2">
+                                {whatYouGet.map((item) => (
+                                    <div key={item} className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
+                                        <span className={`mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full text-xs font-bold text-white ${accentBg}`}>
+                                            ✓
+                                        </span>
+                                        <p className="text-slate-700">{item}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <p className="mt-8 text-center text-lg font-semibold text-slate-900">You focus on the work. We bring you the contracts.</p>
+                            <div className="mt-8 h-px w-full bg-slate-200" aria-hidden />
+                        </div>
+                    </section>
+
+                    <section id="why-struggle" className="bg-white py-16">
+                        <div className="mx-auto max-w-6xl px-6">
+                            <div className="grid gap-10 md:grid-cols-[1.1fr,0.9fr] md:items-center">
+                                <div>
+                                    <h2 className="text-3xl font-semibold text-slate-900">Why Most Vendors Never Scale — And Why Property Outreach Exists</h2>
+                                    <p className="mt-4 text-slate-600">Most contractors struggle to get HOA contracts because:</p>
+                                    <ul className="mt-6 space-y-3 text-slate-700">
+                                        {struggleReasons.map((reason) => (
+                                            <li key={reason} className="flex gap-3">
+                                                <span className={`mt-1 inline-block h-2.5 w-2.5 rounded-full ${accentBg}`} />
+                                                <span>{reason}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <p className="mt-8 text-lg font-semibold text-slate-900">We solve all of this from day one.</p>
+                                </div>
+                                <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                                    <p className="text-sm font-semibold text-slate-800">Before / After</p>
+                                    <div className="mt-4 grid gap-4 md:grid-cols-2">
+                                        <div className="rounded-xl bg-white p-4 shadow-inner">
+                                            <p className="text-xs uppercase tracking-wide text-slate-500">Before</p>
+                                            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+                                                <li>Chasing referrals</li>
+                                                <li>Guessing decision makers</li>
+                                                <li>No follow-up system</li>
+                                            </ul>
+                                        </div>
+                                        <div className="rounded-xl bg-white p-4 shadow-inner">
+                                            <p className="text-xs uppercase tracking-wide text-slate-500">After</p>
+                                            <ul className="mt-3 space-y-2 text-sm text-slate-700">
+                                                <li>Verified HOA contacts</li>
+                                                <li>Booked meetings delivered</li>
+                                                <li>Predictable pipeline</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div className="absolute -right-8 -bottom-10 h-24 w-24 rounded-full bg-[#E8F3F1] blur-2xl" aria-hidden />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                     <section id="how-it-works" className="border-t border-slate-200 bg-slate-50 py-16">
                         <div className="mx-auto max-w-6xl px-6">
                             <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                                 <div>
-                                    <h2 className="text-3xl font-semibold text-slate-900">How Property Outreach works</h2>
-                                    <p className="mt-3 max-w-2xl text-slate-600">
-                                        We are not a landscaping company. We coordinate the outreach between HOAs and local service vendors, so both sides save time and
-                                        get better conversations.
-                                    </p>
+                                    <h2 className="text-3xl font-semibold text-slate-900">A simple system for predictable HOA contracts</h2>
+                                    <p className="mt-3 max-w-2xl text-slate-600">Five steps to keep your calendar full of qualified HOA meetings.</p>
                                 </div>
+                                <a
+                                    href="#contact"
+                                    className={`inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-md ${accentBg}`}
+                                >
+                                    Book a Call
+                                </a>
                             </div>
-                            <div className="mt-10 grid gap-6 md:grid-cols-3">
-                                {[
-                                    {
-                                        title: 'We identify your timing',
-                                        text: 'We reach out to HOAs and property managers to understand when they review or rebid key service contracts like landscaping and snow removal.'
-                                    },
-                                    {
-                                        title: 'We match you with a local vendor',
-                                        text: 'When a community is open to reviewing options, we coordinate a meeting with a vetted local service vendor in their area.'
-                                    },
-                                    {
-                                        title: 'You have a focused meeting',
-                                        text: 'The HOA or property manager gets one clear conversation with a potential vendor. No spam, no endless pitches – just a straightforward meeting when they are actually reviewing the contract.'
-                                    }
-                                ].map((step, index) => (
-                                    <div key={step.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                            <div className="mt-10 grid gap-6 md:grid-cols-5">
+                                {howItWorks.map((step, index) => (
+                                    <div key={step.title} className="flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                                         <div className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold text-white ${accentBg}`}>
                                             {index + 1}
                                         </div>
-                                        <h3 className="text-xl font-semibold text-slate-900">{step.title}</h3>
-                                        <p className="mt-3 text-slate-600">{step.text}</p>
+                                        <div className="flex items-center gap-2 text-sm font-semibold text-slate-800">
+                                            <span className={`flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 ${accent}`}>{step.icon}</span>
+                                            <span className="text-xs uppercase tracking-wide text-slate-500">Step {index + 1}</span>
+                                        </div>
+                                        <h3 className="mt-3 text-lg font-semibold text-slate-900">{step.title}</h3>
+                                        <p className="mt-2 text-sm text-slate-600">{step.text}</p>
                                     </div>
                                 ))}
                             </div>
-                        </div>
-                    </section>
-
-                    <section id="for-hoas" className="bg-white py-16">
-                        <div className="mx-auto max-w-6xl px-6">
-                            <div className="max-w-3xl">
-                                <h2 className="text-3xl font-semibold text-slate-900">For HOAs and property managers</h2>
-                                <p className="mt-3 text-slate-600">
-                                    Our job is to make it easy for you to explore options when you are already planning to review a contract.
-                                </p>
-                            </div>
-                            <div className="mt-10 grid gap-6 md:grid-cols-2">
-                                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                                    <h3 className="text-xl font-semibold text-slate-900">What you get</h3>
-                                    <ul className="mt-4 space-y-3 text-slate-700">
-                                        {[
-                                            'A simple way to meet at least one local vendor when you review a contract.',
-                                            'No obligation to switch providers or sign anything on the spot.',
-                                            'Vendors selected based on your location and service needs.'
-                                        ].map((item) => (
-                                            <li key={item} className="flex gap-3">
-                                                <span className={`mt-1 inline-block h-2.5 w-2.5 rounded-full ${accentBg}`} />
-                                                <span>{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                                    <h3 className="text-xl font-semibold text-slate-900">How it feels to work with us</h3>
-                                    <ul className="mt-4 space-y-3 text-slate-700">
-                                        {[
-                                            'No aggressive sales tactics – we are coordinators, not closers.',
-                                            'We contact you with respect for your time and process.',
-                                            'You stay fully in control of who you meet and when.'
-                                        ].map((item) => (
-                                            <li key={item} className="flex gap-3">
-                                                <span className={`mt-1 inline-block h-2.5 w-2.5 rounded-full ${accentBg}`} />
-                                                <span>{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-                            <p className="mt-6 max-w-3xl text-sm text-slate-600">
-                                Today we focus primarily on landscaping and snow removal. Over time, we may add more services like waste collection, cleaning, pest
-                                control, and general maintenance.
-                            </p>
-                        </div>
-                    </section>
-
-                    <section id="for-vendors" className="border-t border-slate-200 bg-slate-50 py-16">
-                        <div className="mx-auto max-w-6xl px-6">
-                            <div className="max-w-3xl">
-                                <h2 className="text-3xl font-semibold text-slate-900">For service vendors</h2>
-                                <p className="mt-3 text-slate-600">
-                                    We help local service companies get in front of the people who actually decide on contracts.
-                                </p>
-                            </div>
-                            <div className="mt-10 grid gap-8 md:grid-cols-2">
-                                <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                                    <h3 className="text-lg font-semibold text-slate-900">Ideal vendors we work with</h3>
-                                    <ul className="mt-4 space-y-3 text-slate-700">
-                                        {[
-                                            'Landscaping and snow removal companies serving HOA communities.',
-                                            'Teams that can handle recurring contracts, not just one-off jobs.',
-                                            'Owners and sales leaders who are willing to follow up fast on qualified meetings.'
-                                        ].map((item) => (
-                                            <li key={item} className="flex gap-3">
-                                                <span className={`mt-1 inline-block h-2.5 w-2.5 rounded-full ${accentBg}`} />
-                                                <span>{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                                <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                                    <h3 className="text-lg font-semibold text-slate-900">What you get with Property Outreach</h3>
-                                    <ul className="mt-4 space-y-3 text-slate-700">
-                                        {[
-                                            'Qualified meetings with HOA boards or property managers in your target area.',
-                                            'Conversations timed around their contract review window.',
-                                            'Simple, transparent pay-per-meeting model on pilot campaigns.'
-                                        ].map((item) => (
-                                            <li key={item} className="flex gap-3">
-                                                <span className={`mt-1 inline-block h-2.5 w-2.5 rounded-full ${accentBg}`} />
-                                                <span>{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <p className="mt-4 text-sm text-slate-600">We are not a marketing agency. We focus specifically on outbound and booked meetings into HOAs.</p>
-                                </div>
+                            <div className="mt-10 flex justify-center">
+                                <a
+                                    href="#contact"
+                                    className={`inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-lg ${accentBg}`}
+                                >
+                                    Book a Call
+                                </a>
                             </div>
                         </div>
                     </section>
 
-                    <section id="why" className="bg-white py-16">
+                    <section id="why-choose" className="bg-white py-16">
                         <div className="mx-auto max-w-6xl px-6">
-                            <div className="max-w-3xl">
-                                <h2 className="text-3xl font-semibold text-slate-900">Why work with Property Outreach</h2>
-                            </div>
-                            <div className="mt-10 grid gap-6 md:grid-cols-2">
-                                {[
-                                    {
-                                        title: 'Focused niche',
-                                        text: 'We live in the world of HOAs, property managers, and service contracts. That focus lets us build better lists, better scripts, and better meetings.'
-                                    },
-                                    {
-                                        title: 'Respect for both sides',
-                                        text: 'We protect the time and reputation of both the HOA and the vendor. No spam blasts, no fake urgency – just honest coordination.'
-                                    },
-                                    {
-                                        title: 'Volume with quality',
-                                        text: 'We run consistent outbound at scale, while still qualifying timing, decision-makers, and fit before booking a meeting.'
-                                    },
-                                    {
-                                        title: 'Pilot-friendly model',
-                                        text: 'Start with a small test in one region. Prove the value on a few meetings before expanding.'
-                                    }
-                                ].map((block) => (
-                                    <div key={block.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                                        <h3 className="text-xl font-semibold text-slate-900">{block.title}</h3>
-                                        <p className="mt-3 text-slate-600">{block.text}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="about" className="border-t border-slate-200 bg-slate-50 py-16">
-                        <div className="mx-auto max-w-6xl px-6">
-                            <div className="grid gap-8 md:grid-cols-[2fr,1fr] md:items-center">
+                            <div className="grid gap-8 md:grid-cols-[1.1fr,0.9fr] md:items-center">
                                 <div>
-                                    <h2 className="text-3xl font-semibold text-slate-900">About Property Outreach</h2>
-                                    <p className="mt-4 text-slate-600">
-                                        Property Outreach was created to fix a simple problem: service vendors struggle to get in front of the right decision-makers, and
-                                        HOAs get approached at the wrong time or in the wrong way. Our role is to stand in the middle – coordinating outbound, qualifying
-                                        timing, and setting up focused meetings that respect everyone&apos;s time.
+                                    <h2 className="text-3xl font-semibold text-slate-900">We do the work nobody wants to do — and we do it well</h2>
+                                    <ul className="mt-6 space-y-3 text-slate-700">
+                                        {reasonsToChoose.map((reason) => (
+                                            <li key={reason} className="flex gap-3">
+                                                <span className={`mt-1 inline-block h-2.5 w-2.5 rounded-full ${accentBg}`} />
+                                                <span>{reason}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <p className="mt-8 text-lg font-semibold text-slate-900">
+                                        We’re your silent sales engine. You just show up to the meeting and win the contract.
                                     </p>
-                                    <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                                        <h3 className="text-lg font-semibold text-slate-900">Current focus</h3>
-                                        <p className="mt-3 text-slate-600">
-                                            We currently focus on HOAs and property managers in the Denver metro area for landscaping and snow removal services.
-                                        </p>
-                                    </div>
                                 </div>
-                                <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                                    <div className="flex items-start gap-3">
-                                        <div className={`mt-1 h-10 w-10 rounded-full ${accentBg} opacity-20`} aria-hidden />
-                                        <div>
-                                            <p className="text-sm font-semibold text-slate-800">What we stand for</p>
-                                            <p className="mt-2 text-sm text-slate-600">
-                                                Respectful outreach, transparent meetings, and clear expectations so communities and vendors both feel in control.
-                                            </p>
-                                        </div>
+                                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                                    <div className="flex items-center justify-between">
+                                        <p className="text-sm font-semibold text-slate-800">Trust metrics</p>
+                                        <span className={`rounded-full px-3 py-1 text-xs font-semibold text-white ${accentBg}`}>On</span>
                                     </div>
-                                    <div className="mt-6 grid grid-cols-2 gap-4 text-sm text-slate-700">
-                                        <div className="rounded-xl bg-slate-50 p-4">
-                                            <p className="text-xs uppercase tracking-wide text-slate-500">Built for</p>
-                                            <p className="mt-1 font-semibold text-slate-900">HOA decision-makers</p>
-                                        </div>
-                                        <div className="rounded-xl bg-slate-50 p-4">
-                                            <p className="text-xs uppercase tracking-wide text-slate-500">Partners</p>
-                                            <p className="mt-1 font-semibold text-slate-900">Local service vendors</p>
-                                        </div>
+                                    <div className="mt-4 space-y-4">
+                                        {[{ label: 'Decision-maker accuracy', value: '98%' }, { label: 'Average response time', value: '1 business day' }, { label: 'Commitment', value: 'Month-to-month' }].map((metric) => (
+                                            <div key={metric.label} className="flex items-center justify-between rounded-xl bg-white p-4 shadow-inner">
+                                                <div>
+                                                    <p className="text-sm font-semibold text-slate-800">{metric.label}</p>
+                                                    <p className="text-xs text-slate-600">Verified and tracked</p>
+                                                </div>
+                                                <p className={`text-lg font-semibold ${accent}`}>{metric.value}</p>
+                                            </div>
+                                        ))}
                                     </div>
-                                    <div className="absolute -bottom-10 -right-10 h-24 w-24 rounded-full bg-[#E0ECFF] blur-2xl" aria-hidden />
+                                    <p className="mt-6 text-sm text-slate-600">
+                                        Built with a single accent color, no fluff, and a focus on professional conversations.
+                                    </p>
                                 </div>
                             </div>
+                        </div>
+                    </section>
+
+                    <section id="pricing" className="border-t border-slate-200 bg-slate-50 py-16">
+                        <div className="mx-auto max-w-6xl px-6">
+                            <div className="grid gap-8 md:grid-cols-[1.1fr,0.9fr] md:items-center">
+                                <div>
+                                    <h2 className="text-3xl font-semibold text-slate-900">Simple, predictable, performance-driven</h2>
+                                    <ul className="mt-6 space-y-3 text-slate-700">
+                                        {['Month-to-month', 'Transparent pricing', 'Meetings delivered directly to your calendar', 'No commissions, no surprises'].map((item) => (
+                                            <li key={item} className="flex gap-3">
+                                                <span className={`mt-1 inline-block h-2.5 w-2.5 rounded-full ${accentBg}`} />
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <p className="mt-8 text-lg font-semibold text-slate-900">We either book meetings — or we get fired. It’s that simple.</p>
+                                </div>
+                                <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                                    <div className="rounded-xl border border-slate-200 bg-slate-50 p-6">
+                                        <p className="text-sm font-semibold text-slate-800">Want pricing?</p>
+                                        <p className="mt-2 text-sm text-slate-600">Book a call and we’ll tailor it to your service area and contract size.</p>
+                                        <a
+                                            href="#contact"
+                                            className={`mt-5 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-lg ${accentBg}`}
+                                        >
+                                            Book Your Intro Call
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="testimonials" className="bg-white py-16">
+                        <div className="mx-auto max-w-6xl px-6">
+                            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                                <div>
+                                    <h2 className="text-3xl font-semibold text-slate-900">What vendors say</h2>
+                                    <p className="mt-3 text-slate-600">Real outcomes from vendors who let us handle outbound.</p>
+                                </div>
+                                <a
+                                    href="#contact"
+                                    className={`inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-md ${accentBg}`}
+                                >
+                                    Book a Call
+                                </a>
+                            </div>
+                            <div className="mt-10 grid gap-6 md:grid-cols-3">
+                                {testimonials.map((testimonial) => (
+                                    <div key={testimonial.name} className="flex h-full flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                                        <p className="text-slate-700">“{testimonial.quote}”</p>
+                                        <p className={`mt-4 text-sm font-semibold ${accent}`}>{testimonial.name}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="final-cta" className="border-t border-slate-200 bg-slate-50 py-16">
+                        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 text-center">
+                            <h2 className="text-3xl font-semibold text-slate-900">Ready to get HOA meetings without doing any outbound?</h2>
+                            <p className="text-lg text-slate-700">Let us fill your calendar with real opportunities.</p>
+                            <div className="flex justify-center">
+                                <a
+                                    href="#contact"
+                                    className={`inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-lg ${accentBg}`}
+                                >
+                                    Book Your Intro Call
+                                </a>
+                            </div>
+                            <p className="text-sm text-slate-600">We’ll respond within one business day.</p>
                         </div>
                     </section>
 
                     <section id="contact" className="bg-white py-16">
                         <div className="mx-auto max-w-6xl px-6">
-                            <div className="max-w-3xl">
-                                <h2 className="text-3xl font-semibold text-slate-900">Book an intro call</h2>
-                                <p className="mt-3 text-slate-600">
-                                    Whether you are an HOA, a property manager, or a service vendor, use the form below to request an intro call. We will get back to you
-                                    within one business day.
-                                </p>
-                            </div>
-                            <form
-                                name="contact"
-                                method="POST"
-                                className="mt-10 grid gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
-                            >
+                            <h2 className="text-3xl font-semibold text-slate-900">Contact &amp; Booking</h2>
+                            <p className="mt-3 max-w-2xl text-slate-600">Tell us where you work and what you need. We’ll book the HOA meetings for you.</p>
+                            <form className="mt-10 grid gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
                                 <div className="grid gap-4 md:grid-cols-2">
                                     <div className="flex flex-col gap-2">
                                         <label className="text-sm font-semibold text-slate-800" htmlFor="name">
@@ -351,17 +456,18 @@ export default function HomePage() {
                                             id="name"
                                             name="Name"
                                             required
-                                            className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none ring-0 transition focus:border-[#1F7A8C]"
+                                            className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[#1F7A8C]"
                                         />
                                     </div>
                                     <div className="flex flex-col gap-2">
-                                        <label className="text-sm font-semibold text-slate-800" htmlFor="organization">
-                                            Organization
+                                        <label className="text-sm font-semibold text-slate-800" htmlFor="company">
+                                            Company *
                                         </label>
                                         <input
-                                            id="organization"
-                                            name="Organization"
-                                            className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none ring-0 transition focus:border-[#1F7A8C]"
+                                            id="company"
+                                            name="Company"
+                                            required
+                                            className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[#1F7A8C]"
                                         />
                                     </div>
                                 </div>
@@ -375,7 +481,7 @@ export default function HomePage() {
                                             name="Email"
                                             type="email"
                                             required
-                                            className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none ring-0 transition focus:border-[#1F7A8C]"
+                                            className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[#1F7A8C]"
                                         />
                                     </div>
                                     <div className="flex flex-col gap-2">
@@ -385,23 +491,25 @@ export default function HomePage() {
                                         <input
                                             id="phone"
                                             name="Phone"
-                                            className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none ring-0 transition focus:border-[#1F7A8C]"
+                                            className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[#1F7A8C]"
                                         />
                                     </div>
                                 </div>
                                 <div className="grid gap-4 md:grid-cols-2">
                                     <div className="flex flex-col gap-2">
-                                        <label className="text-sm font-semibold text-slate-800" htmlFor="role">
-                                            I am a...
+                                        <label className="text-sm font-semibold text-slate-800" htmlFor="service-type">
+                                            Service Type
                                         </label>
-                                        <select
-                                            id="role"
-                                            name="Role"
-                                            className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none ring-0 transition focus:border-[#1F7A8C]"
+                                    <select
+                                            id="service-type"
+                                            name="Service Type"
+                                            className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[#1F7A8C]"
                                         >
-                                            <option>HOA board member</option>
-                                            <option>Property manager</option>
-                                            <option>Service vendor</option>
+                                            <option>Landscaping</option>
+                                            <option>Pressure Washing</option>
+                                            <option>Snow Removal</option>
+                                            <option>Pool Service</option>
+                                            <option>Cleaning</option>
                                             <option>Other</option>
                                         </select>
                                     </div>
@@ -412,7 +520,7 @@ export default function HomePage() {
                                         <input
                                             id="city"
                                             name="City / Region"
-                                            className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none ring-0 transition focus:border-[#1F7A8C]"
+                                            className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[#1F7A8C]"
                                         />
                                     </div>
                                 </div>
@@ -424,7 +532,7 @@ export default function HomePage() {
                                         id="message"
                                         name="Message"
                                         rows={4}
-                                        className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none ring-0 transition focus:border-[#1F7A8C]"
+                                        className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[#1F7A8C]"
                                     />
                                 </div>
                                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -448,9 +556,9 @@ export default function HomePage() {
                         <p>© {new Date().getFullYear()} Property Outreach. All rights reserved.</p>
                         <div className="flex flex-wrap items-center gap-4">
                             {[
-                                { label: 'How it works', href: '#how-it-works' },
-                                { label: 'For HOAs', href: '#for-hoas' },
-                                { label: 'For Service Vendors', href: '#for-vendors' },
+                                { label: 'How It Works', href: '#how-it-works' },
+                                { label: 'Why Vendors Struggle', href: '#why-struggle' },
+                                { label: 'Pricing', href: '#pricing' },
                                 { label: 'Contact', href: '#contact' }
                             ].map((link) => (
                                 <a key={link.href} href={link.href} className="transition hover:text-slate-900">
