@@ -147,8 +147,8 @@ export default function HomePage() {
                 <main id="top">
                     <section className="relative overflow-hidden bg-white">
                         <div className="absolute inset-x-0 -top-24 h-64 bg-gradient-to-b from-slate-50 to-transparent" aria-hidden />
-                        <div className="mx-auto flex min-h-[70vh] max-w-5xl flex-col items-center justify-center gap-8 px-6 pb-20 pt-16 text-center md:pt-20">
-                            <div className="w-full space-y-6">
+                        <div className="mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center gap-6 px-6 py-12 text-center md:py-16">
+                            <div className="w-full space-y-5">
                                 <h1 className="text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl">
                                     We Book HOA Meetings For You — So You Can Focus On Growing Your Business
                                 </h1>
